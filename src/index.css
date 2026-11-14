@@ -1,0 +1,99 @@
+:root {
+  /* Sky Background Gradient */
+  --sky-top: #a3c5e3;
+  --sky-bottom: #e2ebf3;
+  
+  /* Text Colors */
+  --text-primary: #111111; /* Dark black/grey for text */
+  --text-secondary: #333333;
+  
+  /* Buttons */
+  --btn-bg: #111111;
+  --btn-text: #ffffff;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--sky-top); /* Fallback */
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Sky Background Wrapper */
+.sky-bg {
+  background: linear-gradient(to bottom, var(--sky-top) 0%, var(--sky-bottom) 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar Link Style */
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* Black Pill Button */
+.btn-black {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 0.8rem 1.8rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.btn-black:hover {
+  transform: scale(1.05);
+  background: #000;
+}
+@media (max-width: 768px) {
+  .hidden-mobile-btn {
+    display: none; /* Mobile par top wala button hide ho jaye taaki jagah bache */
+  }
+}
+/* Desktop styles */
+.nav-links-desktop {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.mobile-menu-btn {
+  display: none; /* Mobile button default me chhupa rahega */
+}
+
+/* 📱 MOBILE VIEW (Jab screen 768px se choti ho) */
+@media (max-width: 768px) {
+  /* Desktop links ko zabardasti hide karo */
+  .nav-links-desktop {
+    display: none !important; 
+  }
+  
+  /* Desktop wale "Talk to us" button ko hide karo */
+  .hidden-mobile-btn {
+    display: none !important;
+  }
+  
+  /* Hamburger menu ko show karo */
+  .mobile-menu-btn {
+    display: flex !important;
+  }
+}
+@media (max-width: 768px) {
+  .nav-links-desktop { display: none !important; }
+  .hidden-mobile-btn { display: none !important; }
+  .mobile-menu-btn { display: flex !important; }
+}
