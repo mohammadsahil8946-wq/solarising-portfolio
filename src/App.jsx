@@ -1,4 +1,5 @@
 import { useScroll, useSpring, motion } from 'framer-motion';
+import { Analytics } from '@vercel/analytics/react';
 import useLenis from './hooks/useLenis';
 import GlobalBackground from './components/GlobalBackground';
 import Navbar from './components/Navbar';
@@ -30,6 +31,7 @@ export default function App() {
       </main>
       
       <Footer />
+      <Analytics />
     </>
   );
 }
